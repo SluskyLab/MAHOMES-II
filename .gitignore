@@ -1,4 +1,5 @@
 MachineLearning/saved_models/
+FeatureCalculations/ThirdPartyCalculations/check_setup/output/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

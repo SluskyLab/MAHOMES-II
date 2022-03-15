@@ -1,4 +1,4 @@
-import PDBparser as pdbp
+#import PDBparser as pdbp
 import grid_tools
 import numpy as np
 import scipy

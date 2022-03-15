@@ -12,9 +12,9 @@ sys.path.insert(0, "%s" % RESOURCE_DIR)
 import SITE as SITE
 import PDBparser as pdbp
 
-sys.path.insert(0, "%s" % "features_old/")
-import features_EnergyTermsWCutoffs as f_old_energy
-import features_pocket_measure as f_pocket_measure
+#sys.path.insert(0, "%s" % "features_old/")
+#import features_EnergyTermsWCutoffs as f_old_energy
+#import features_pocket_measure as f_pocket_measure
 
 #import warnings
 #warnings.filterwarnings(action="ignore")
@@ -101,15 +101,15 @@ def get_features_for_site(struc_id, struc_dir, site, this_protein, res_nums, old
     ##  pocket_measure and old Rosetta  ##  
     ######################################
     old_energy_terms = []; pm_pocket = []; pm_lining=[]
-    if old_features:
+    #if old_features:
         ## pocket_measure was only used for sites in the dataset and test-set
         ## so, any other sites will have no output and fail
-        try:
-            pm_pocket, pm_lining = f_pocket_measure.get_pocket_lining_features(site, this_protein, res_nums)
-        except:
-            pm_pocket=[]
-            pm_lining=[]
-        old_energy_terms = f_old_energy.get_EnergyTermsWCutoffs(struc_dir, site, this_protein)
+    #    try:
+    #        pm_pocket, pm_lining = f_pocket_measure.get_pocket_lining_features(site, this_protein, res_nums)
+    #    except:
+    #        pm_pocket=[]
+    #        pm_lining=[]
+    #    old_energy_terms = f_old_energy.get_EnergyTermsWCutoffs(struc_dir, site, this_protein)
         #print(old_energy_terms)
     ######################################
     ####  combine feature domains    #####  

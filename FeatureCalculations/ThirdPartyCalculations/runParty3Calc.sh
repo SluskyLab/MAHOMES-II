@@ -1,12 +1,12 @@
 #!/bin/bash
-#echo "Working in runThirdPartyTools.sh!"
+echo "Working in runThirdPartyTools.sh!"
 
 PDB=$1
 INPUT_FILE=$2
 OUTPUT_DIR=$3
-#echo $PDB
-#echo $INPUT_FILE
-#echo $OUTPUT_DIR
+echo $PDB
+echo $INPUT_FILE
+echo $OUTPUT_DIR
 
 ## make sure we are using the correct environment
 source ${MAHOMES_II_DIR}/venv/bin/activate
