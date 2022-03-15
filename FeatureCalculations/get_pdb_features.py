@@ -12,18 +12,6 @@ sys.path.insert(0, "%s" % RESOURCE_DIR)
 import SITE as SITE
 import PDBparser as pdbp
 
-#sys.path.insert(0, "%s" % "features_old/")
-#import features_EnergyTermsWCutoffs as f_old_energy
-#import features_pocket_measure as f_pocket_measure
-
-#import warnings
-#warnings.filterwarnings(action="ignore")
-
-#pd.set_option('display.max_columns',None)
-#pd.set_option('display.max_rows',None)
-#pd.set_option('display.width',None)
-#pd.set_option('display.max_colwidth',None)
-
 metal_size = {
          'MO':1, 'MOO':5, '4MO' : 1,'6MO' :1,'MOS': 4,
          'MG': 1,'3NI':1,'NI' : 1, 'ZN': 1,'MGF': 4,'MN3' : 1,'MN' : 1,'CO': 1,
@@ -98,24 +86,10 @@ def get_features_for_site(struc_id, struc_dir, site, this_protein, res_nums, old
     #print(pocket_shape)
     
     ######################################
-    ##  pocket_measure and old Rosetta  ##  
-    ######################################
-    old_energy_terms = []; pm_pocket = []; pm_lining=[]
-    #if old_features:
-        ## pocket_measure was only used for sites in the dataset and test-set
-        ## so, any other sites will have no output and fail
-    #    try:
-    #        pm_pocket, pm_lining = f_pocket_measure.get_pocket_lining_features(site, this_protein, res_nums)
-    #    except:
-    #        pm_pocket=[]
-    #        pm_lining=[]
-    #    old_energy_terms = f_old_energy.get_EnergyTermsWCutoffs(struc_dir, site, this_protein)
-        #print(old_energy_terms)
-    ######################################
     ####  combine feature domains    #####  
     ######################################
     calc_feats = []
-    for domain in [SITE_info, bluues_electro, geom_feat, energy_terms, pocket_shape, pocket_lining, pocket_info, old_energy_terms, pm_pocket, pm_lining]:
+    for domain in [SITE_info, bluues_electro, geom_feat, energy_terms, pocket_shape, pocket_lining, pocket_info]:
         #print(domain, len(domain))
         if len(domain)>0:
             calc_feats.append(domain)

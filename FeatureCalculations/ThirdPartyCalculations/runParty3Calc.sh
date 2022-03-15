@@ -5,8 +5,6 @@ PDB=$1
 INPUT_FILE=$2
 OUTPUT_DIR=$3
 echo $PDB
-echo $INPUT_FILE
-echo $OUTPUT_DIR
 
 ## make sure we are using the correct environment
 source ${MAHOMES_II_DIR}/venv/bin/activate
@@ -61,7 +59,6 @@ ${GHECOM_DIR}/ghecom -M M -ipdb ${PDB}.pdb -opocpdb ${PDB}_ghecom.pdb > ${PDB}_g
 #module load python/2.7
 ## otherwise
 source ${MAHOMES_II_DIR}/venv2/bin/activate
-
 ## run findgeo with our hacks
 python ${THIRD_PARTY_TOOLS}/findgeo.py -o -p ${PDB}.pdb -i ${PDB} -t 3.5 > ${PDB}_findgeo.log
 

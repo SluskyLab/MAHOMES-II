@@ -17,7 +17,7 @@ def fix_SSBOND(PDB_file):
     pdb_file_df = pd.DataFrame(pdb_lines, columns = ['raw'])
     pdb_file_df['raw'] = pdb_file_df['raw'].str[:80]
     pdb_file_df['key'] = pdb_file_df['raw'].str[:6].str.replace(' ', '')
-    print(len(pdb_file_df.loc[pdb_file_df['key'].str[:]=="SSBOND"]))
+    #print(len(pdb_file_df.loc[pdb_file_df['key'].str[:]=="SSBOND"]))
     if len(pdb_file_df.loc[pdb_file_df['key'].str[:]=="SSBOND"])<1:
         return
     elif len(pdb_file_df.loc[pdb_file_df['key'].str[:]=="SSBOND"])<100:
