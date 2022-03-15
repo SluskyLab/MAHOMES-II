@@ -1,0 +1,21 @@
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="noweight" weights="EqualWeight"/> 
+	</SCOREFXNS>
+	<FILTERS>
+		<BuriedSurfaceArea name="BSA" confidence="0"/>
+	</FILTERS>
+	<SIMPLE_METRICS>
+		<PerResidueSasaMetric name="sasa" />
+	</SIMPLE_METRICS>
+	<MOVERS>
+		<ScoreMover name="scoring" scorefxn="noweight"/>
+		<RunSimpleMetrics name="run_metrics1" metrics="sasa" />
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover="scoring"/>
+		<Add mover_name="run_metrics1" />
+		<Add filter_name="BSA"/>
+	</PROTOCOLS>
+	<OUTPUT scorefxn="noweight"/>
+</ROSETTASCRIPTS>

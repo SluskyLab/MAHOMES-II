@@ -1,0 +1,10 @@
+
+-ignore_zero_occupancy false 
+-ignore_unrecognized_res
+-beta_nov16
+-out:pdb
+-overwrite
+-out:levels protocols.denovo_design.ExposedHydrophobicsFilter:500 protocols.toolbox.pose_metric_calculators.RotamerBoltzCalculator:100 core.pack.interaction_graph.interaction_graph_factory:100 core.pack.pack_rotamers:100
+-out:file:scorefile Score.sc
+
+
