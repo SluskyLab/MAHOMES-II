@@ -1,0 +1,385 @@
+core.init: Checking for fconfig files in pwd and ./rosetta/flags 
+core.init: Rosetta version: rosetta.source.release-280 r280 2021.16+release.8ee4f02 8ee4f02ac5768a8a339ffada74cb0ff5f778b3e6 https://www.rosettacommons.org 2021-04-20T20:57:38.289184
+core.init: command: rosetta_scripts.default.linuxgccrelease -s /panfs/pfs.local/scratch/compbio/r567f246/PDB_Chains/1/a/1a7i_A/1a7i_A.pdb -parser:protocol /panfs/pfs.local/work/slusky/r567f246/MAHOMES_II/ScoreOnly.xml @Scoring.flags
+basic.random.init_random_generator: 'RNG device' seed mode, using '/dev/urandom', seed=669732339 seed_offset=0 real_seed=669732339
+basic.random.init_random_generator: RandomGenerator:init: Normal mode, seed=669732339 RG_type=mt19937
+core.init: Resolved executable path: /panfs/pfs.local/software/7/install/rosetta/3.13/main/source/build/src/release/linux/3.10/64/x86/gcc/8.3/default/rosetta_scripts.default.linuxgccrelease
+core.init: Looking for database based on location of executable: /panfs/pfs.local/software/7/install/rosetta/3.13/main/database/
+protocols.jd2.PDBJobInputter: Instantiate PDBJobInputter
+protocols.jd2.PDBJobInputter: PDBJobInputter::fill_jobs
+protocols.jd2.PDBJobInputter: pushed /panfs/pfs.local/scratch/compbio/r567f246/PDB_Chains/1/a/1a7i_A/1a7i_A.pdb nstruct index 1
+protocols.evaluation.ChiWellRmsdEvaluatorCreator: Evaluation Creator active ... 
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from PDB /panfs/pfs.local/scratch/compbio/r567f246/PDB_Chains/1/a/1a7i_A/1a7i_A.pdb
+core.chemical.GlobalResidueTypeSet: Finished initializing fa_standard residue type set.  Created 984 residue types
+core.chemical.GlobalResidueTypeSet: Total time to initialize 1.53 seconds.
+core.import_pose.import_pose: File '/panfs/pfs.local/scratch/compbio/r567f246/PDB_Chains/1/a/1a7i_A/1a7i_A.pdb' automatically determined to be of type PDB
+protocols.rosetta_scripts.RosettaScriptsParser: dock_design_filename=/panfs/pfs.local/work/slusky/r567f246/MAHOMES_II/ScoreOnly.xml
+protocols.rosetta_scripts.RosettaScriptsParser: Generating XML Schema for rosetta_scripts...
+protocols.rosetta_scripts.RosettaScriptsParser: ...done
+protocols.rosetta_scripts.RosettaScriptsParser: Initializing schema validator...
+protocols.rosetta_scripts.RosettaScriptsParser: ...done
+protocols.rosetta_scripts.RosettaScriptsParser: Validating input script...
+protocols.rosetta_scripts.RosettaScriptsParser: ...done
+protocols.rosetta_scripts.RosettaScriptsParser: Parsed script:
+<ROSETTASCRIPTS>
+	<SCOREFXNS>
+		<ScoreFunction name="noweight" weights="EqualWeight"/>
+	</SCOREFXNS>
+	<FILTERS>
+		<BuriedSurfaceArea confidence="0" name="BSA"/>
+	</FILTERS>
+	<SIMPLE_METRICS>
+		<PerResidueSasaMetric name="sasa"/>
+	</SIMPLE_METRICS>
+	<MOVERS>
+		<ScoreMover name="scoring" scorefxn="noweight"/>
+		<RunSimpleMetrics metrics="sasa" name="run_metrics1"/>
+	</MOVERS>
+	<PROTOCOLS>
+		<Add mover="scoring"/>
+		<Add mover_name="run_metrics1"/>
+		<Add filter_name="BSA"/>
+	</PROTOCOLS>
+	<OUTPUT scorefxn="noweight"/>
+</ROSETTASCRIPTS>
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: beta_nov16.wts
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBPoly1D.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBFadeIntervals.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/HBEval.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/DonStrength.csv
+basic.io.database: Database file opened: scoring/score_functions/hbonds/ref2015_params/AccStrength.csv
+basic.io.database: Database file opened: scoring/score_functions/rama/fd_beta_nov2016/all.ramaProb
+basic.io.database: Database file opened: scoring/score_functions/rama/fd_beta_nov2016/prepro.ramaProb
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.all.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.gly.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.pro.txt
+basic.io.database: Database file opened: scoring/score_functions/omega/omega_ppdep.valile.txt
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/P_AA_n
+core.scoring.P_AA: shapovalov_lib::shap_p_aa_pp_smooth_level of 1( aka low_smooth ) got activated.
+basic.io.database: Database file opened: scoring/score_functions/P_AA_pp/shapovalov/10deg/kappa131/a20.prop
+basic.io.database: Database file opened: scoring/score_functions/bondlength_bondangle/hydroxyl_torsion_preference.txt
+core.scoring.etable: Starting energy table calculation
+core.scoring.etable: smooth_etable: changing atr/rep split to bottom of energy well
+core.scoring.etable: smooth_etable: spline smoothing lj etables (maxdis = 6)
+core.scoring.etable: smooth_etable: spline smoothing solvation etables (max_dis = 6)
+core.scoring.etable: Finished calculating energy tables.
+basic.io.database: Database file opened: scoring/score_functions/PairEPotential/pdb_pair_stats_fine
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/InterchainPotential/interchain_pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/env_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cbeta_den.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/pair_log.txt
+basic.io.database: Database file opened: scoring/score_functions/EnvPairPotential/cenpack_log.txt
+core.scoring.ramachandran: shapovalov_lib::shap_rama_smooth_level of 4( aka highest_smooth ) got activated.
+basic.io.database: Database file opened: scoring/score_functions/rama/shapovalov/kappa25/all.ramaProb
+protocols.jd2.parser.ScoreFunctionLoader: defined score function "noweight" with weights "EqualWeight"
+protocols.rosetta_scripts.RosettaScriptsParser: Defined filter named "BSA" of type BuriedSurfaceArea
+core.scoring.ScoreFunctionFactory: SCOREFUNCTION: beta_nov16.wts
+protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "scoring" of type ScoreMover
+core.simple_metrics.util: Added simple metric PerResidueSasaMetric.
+protocols.rosetta_scripts.RosettaScriptsParser: Defined mover named "run_metrics1" of type RunSimpleMetrics
+protocols.rosetta_scripts.ParsedProtocol: ParsedProtocol mover with the following settings
+protocols.rosetta_scripts.ParsedProtocol: Added mover "scoring"
+protocols.rosetta_scripts.ParsedProtocol: Added mover "run_metrics1"
+protocols.rosetta_scripts.ParsedProtocol: Added filter "BSA"
+protocols.jd2.PDBJobInputter: PDBJobInputter::pose_from_job
+protocols.jd2.PDBJobInputter: filling pose from saved copy /panfs/pfs.local/scratch/compbio/r567f246/PDB_Chains/1/a/1a7i_A/1a7i_A.pdb
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER ScoreMover - scoring=======================
+basic.io.database: Database file opened: scoring/score_functions/elec_cp_reps.dat
+core.scoring.elec.util: Read 40 countpair representative atoms
+core.pack.dunbrack.RotamerLibrary: shapovalov_lib_fixes_enable option is true.
+core.pack.dunbrack.RotamerLibrary: Binary rotamer library selected: /panfs/pfs.local/software/7/install/rosetta/3.13/main/database/rotamer/beta_nov2016/Dunbrack10.lib.bin
+core.pack.dunbrack.RotamerLibrary: Using Dunbrack library binary file '/panfs/pfs.local/software/7/install/rosetta/3.13/main/database/rotamer/beta_nov2016/Dunbrack10.lib.bin'.
+core.pack.dunbrack.RotamerLibrary: Dunbrack 2010 library took 0.24 seconds to load from binary
+protocols.simple_moves.ScoreMover: E               fa_atr        fa_rep        fa_solfa_intra_atr_xfa_intra_rep_xfa_intra_sol_x       lk_ball   lk_ball_isolk_ball_bridgelk_ball_bridge       fa_elec fa_intra_elec     pro_close   hbond_sr_bb   hbond_lr_bb   hbond_bb_sc      hbond_sc     dslf_fa13         omega        fa_dun    fa_dun_dev    fa_dun_rot   fa_dun_semi       p_aa_pp yhh_planarity      hxl_tors           reflinear_chainbroverlap_chainb   rama_prepro
+protocols.simple_moves.ScoreMover: E(i)   1         -1.90          0.36          2.12         -0.17          0.03          0.27          1.04          2.73          0.02          0.13         -1.07          0.07          0.00          0.00          0.00          0.00          0.00          0.00          0.14          2.74          0.06          0.00          2.67          0.00          0.00          0.00         -0.30          0.00          0.00          0.00
+protocols.simple_moves.ScoreMover: E(i)   2         -4.38          0.74          3.13         -0.29          0.05          0.12          0.80          3.92          0.00          0.00         -1.35         -0.13          0.00          0.00          0.00         -0.25          0.00          0.00          0.50          2.82          0.14          2.68          0.00          0.07          0.00          0.00         -0.89          0.00          0.00         -0.15
+protocols.simple_moves.ScoreMover: E(i)   3         -7.69          5.81          4.67         -0.07          0.00          0.04          4.02          5.98          0.00          0.00         -1.50         -0.39          0.00          0.00          0.00          0.00          0.00          0.00          0.55          0.43          0.00          0.43          0.00          0.06          0.00          0.00          4.31          0.00          0.00         -0.12
+protocols.simple_moves.ScoreMover: E(i)   4         -1.58          0.32          1.64          0.00          0.00          0.00          0.70          2.36          0.00          0.00          0.86         -0.44          0.00          0.00          0.00          0.00          0.00          0.00         -0.23          0.00          0.00          0.00          0.00          0.61          0.00          0.00          1.44          0.00          0.00          0.51
+protocols.simple_moves.ScoreMover: E(i)   5         -2.81          1.22          0.80         -0.02          0.01          0.00          0.58          2.27          0.00          0.00          0.87         -0.44          0.00          0.00          0.00          0.00          0.00          0.00         -0.04          0.00          0.00          0.00          0.00          0.08          0.00          0.00          2.26          0.00          0.00         -0.04
+protocols.simple_moves.ScoreMover: E(i)   6         -5.43          6.43          3.56         -0.04          0.00          0.02          1.35          3.90          0.00          0.00         -1.76         -0.24          0.00          0.00          0.00          0.00          0.00          0.00          0.09          0.21          0.01          0.20          0.00         -0.04          0.00          0.00          4.31          0.00          0.00          1.00
+protocols.simple_moves.ScoreMover: E(i)   7         -2.14          0.14          2.55          0.00          0.00          0.00          1.10          3.05          0.02          0.12         -0.58         -0.45          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00         -2.12          0.00          0.00          1.44          0.00          0.00          0.76
+protocols.simple_moves.ScoreMover: E(i)   8         -4.77          0.67          4.55         -0.43          0.12          0.22          1.71          5.25          0.02          0.12         -0.72          0.10          0.00          0.00          0.00          0.00          0.00          0.00          0.20          2.98          0.12          2.86          0.00         -0.26          0.00          0.00         -0.14          0.00          0.00         -0.90
+protocols.simple_moves.ScoreMover: E(i)   9         -3.54          0.55          2.41         -0.12          0.11          0.07          1.04          3.43          0.00          0.00         -1.81         -0.57          0.00          0.00          0.00         -0.54          0.00          0.00         -0.06          0.11          0.04          0.07          0.00         -0.72          0.00          2.28         -0.93          0.00          0.00         -0.41
+protocols.simple_moves.ScoreMover: E(i)  10         -5.80          1.13          2.54         -0.33          0.49          0.07          1.26          5.02          0.02          0.13          0.00          0.25          0.00          0.00          0.00          0.00          0.00          0.00          0.10          0.29          0.03          0.26          0.00         -0.58          0.00          0.00          2.74          0.00          0.00         -0.38
+protocols.simple_moves.ScoreMover: E(i)  11         -2.55          0.53          1.88         -0.74          0.06          0.11          0.22          2.51          0.06          0.46          1.57         -0.23          0.00          0.00          0.00          0.00          0.00          0.00          0.11          3.08          0.03          0.00          3.05          0.03          0.00          0.00          1.74          0.00          0.00          2.28
+protocols.simple_moves.ScoreMover: E(i)  12         -3.44          0.78          3.19         -0.58          0.01          0.53          1.13          4.30          0.17          0.82          0.80         -0.26          0.00          0.00          0.00          0.00          0.00          0.00          0.56          2.17          0.00          0.00          2.17         -0.67          0.00          0.00          0.84          0.00          0.00          4.96
+protocols.simple_moves.ScoreMover: E(i)  13         -2.12          0.16          2.13         -0.02          0.00          0.00          0.76          2.80          0.00          0.00          0.68         -0.37          0.00          0.00          0.00          0.00          0.00          0.00         -0.14          0.00          0.00          0.00          0.00         -0.57          0.00          0.00          2.26          0.00          0.00          2.10
+protocols.simple_moves.ScoreMover: E(i)  14         -4.46          0.95          5.00         -0.46          0.16          0.97          2.24          5.85          0.11          0.32         -2.72         -0.40          0.00          0.00          0.00          0.00         -0.64          0.00          0.12          3.57          0.07          0.00          3.49          0.28          0.00          0.00         -1.64          0.00          0.00         -0.39
+protocols.simple_moves.ScoreMover: E(i)  15         -7.36          1.38          7.56         -0.28          0.10          0.32          2.87          8.48          0.01          0.07         -2.49         -0.24          0.00          0.00          0.00          0.00         -1.50          0.00          0.92          5.27          0.17          0.00          5.10          0.26          0.00          0.00         -1.64          0.00          0.00         -0.07
+protocols.simple_moves.ScoreMover: E(i)  16         -6.98          1.49          3.21         -0.40          1.46          0.09          2.44          6.57          0.00          0.00         -1.89         -0.36          0.00          0.00          0.00          0.00          0.00          0.00          0.00          1.46          0.31          1.15          0.00         -1.32          0.00          0.00          2.74          0.00          0.00         -0.61
+protocols.simple_moves.ScoreMover: E(i)  17         -4.31          0.33          3.28         -0.73          0.33          1.17          0.92          4.27          0.00          0.00         -1.69         -1.05          0.00          0.00          0.00          0.00         -0.92          0.00          0.06          6.23          0.30          0.00          5.94          0.13          0.00          0.00         -0.11          0.00          0.00         -0.82
+protocols.simple_moves.ScoreMover: E(i)  18         -6.70          1.77          2.77         -0.06          0.04          0.02          2.16          4.93          0.00          0.00         -2.15         -0.99          0.00          0.00          0.00          0.00          0.00          0.00          0.15          1.17          0.05          1.12          0.00         -0.48          0.00          0.00          4.31          0.00          0.00          1.15
+protocols.simple_moves.ScoreMover: E(i)  19         -2.96          1.44          3.46         -0.12          0.00          0.37          1.13          4.23          0.00          0.00         -0.48         -0.98          0.00          0.00          0.00         -0.21          0.00          0.00         -0.14          4.22          0.10          0.00          4.12          0.55          0.00          0.00         -1.62          0.00          0.00          3.73
+protocols.simple_moves.ScoreMover: E(i)  20         -1.40          0.58          2.09          0.00          0.00          0.00          0.56          2.43          0.00          0.00         -1.01         -0.44          0.00          0.00          0.00         -0.21          0.00          0.00          0.03          0.00          0.00          0.00          0.00          0.53          0.00          0.00          1.44          0.00          0.00          2.49
+protocols.simple_moves.ScoreMover: E(i)  21         -5.73          0.89          5.67         -1.20          0.96          0.64          3.34          7.22          0.08          0.78         -1.87          0.41          0.00          0.00          0.00         -0.25          0.00          0.00          0.03          3.44          0.44          3.00          0.00         -0.13          0.00          0.00         -0.14          0.00          0.00          0.27
+protocols.simple_moves.ScoreMover: E(i)  22         -4.98          1.59          3.79         -0.03          0.00          0.07          1.69          5.19          0.08          0.78         -0.97         -0.56          0.00          0.00          0.00          0.00         -0.58          0.00          0.72          0.11          0.00          0.10          0.00         -0.83          0.00          0.69         -0.54          0.00          0.00         -0.36
+protocols.simple_moves.ScoreMover: E(i)  23        -11.05          2.07          3.55         -0.69          0.14          0.42          3.68          7.51          0.00          0.00         -1.63          0.16          0.00          0.00          0.00          0.00          0.00          0.00          0.58          2.44          0.32          0.00          2.12         -0.64          0.00          0.00          1.96          0.00          0.00          0.99
+protocols.simple_moves.ScoreMover: E(i)  24         -9.90          6.68          7.22         -0.46          0.03          0.51          3.01          9.49          0.06          0.34         -6.19         -0.54          0.00          0.00          0.00         -0.54          0.00          0.00          0.54          4.62          0.78          0.00          3.84          0.03          0.00          0.00          0.84          0.00          0.00          1.03
+protocols.simple_moves.ScoreMover: E(i)  25         -5.38          0.63          5.35         -0.97          0.45          0.62          1.82          6.01          0.03          0.25         -2.01          0.18          0.00          0.00          0.00          0.00         -0.64          0.00         -0.06          3.56          0.41          3.15          0.00         -0.19          0.00          0.00         -0.14          0.00          0.00          0.07
+protocols.simple_moves.ScoreMover: E(i)  26         -2.84          0.73          2.63         -0.04          0.00          0.02          0.54          3.15          0.00          0.02          0.29         -0.41          0.00          0.00          0.00          0.00          0.00          0.00          0.38          0.32          0.01          0.31          0.00          0.19          0.00          0.00          4.31          0.00          0.00          1.82
+protocols.simple_moves.ScoreMover: E(i)  27         -5.04          3.58          3.05         -0.07          0.09          0.08          0.89          3.76          0.07          0.38         -0.89         -0.49          0.00          0.00          0.00          0.00          0.00          0.00          0.84          5.05          3.82          1.22          0.00          0.67          0.00          0.00          4.31          0.00          0.00          2.58
+protocols.simple_moves.ScoreMover: E(i)  28         -9.28          2.90          3.17         -0.72          1.43          0.07          2.45          6.96          0.00          0.00         -2.15         -0.08          0.00          0.00          0.00          0.00          0.00          0.00         -0.14          5.03          0.19          0.00          4.84         -0.22          0.00          0.00          1.96          0.00          0.00          1.03
+protocols.simple_moves.ScoreMover: E(i)  29         -7.26          1.16          2.31         -0.79          1.91          0.30          1.16          5.09          0.01          0.03          0.06          0.26          0.00          0.00          0.00          0.00          0.00          0.00          0.35          2.95          0.70          2.26          0.00          0.70          0.00          0.00          1.32          0.00          0.00          0.45
+protocols.simple_moves.ScoreMover: E(i)  30         -8.60          5.76          5.08         -0.06          0.01          0.04          3.29          6.10          0.00          0.00          0.30         -0.26          0.00          0.00          0.00          0.00          0.00          0.00          0.46          1.12          0.19          0.92          0.00          0.31          0.00          0.00          4.31          0.00          0.00         -0.05
+protocols.simple_moves.ScoreMover: E(i)  31         -5.95          0.76          3.24         -0.63          0.56          0.19          1.20          4.11          0.04          0.30         -0.25         -0.17          0.00          0.00          0.00          0.00          0.00          0.00         -0.05          1.54          0.15          1.39          0.00          0.38          0.00          0.00          1.46          0.00          0.00         -0.94
+protocols.simple_moves.ScoreMover: E(i)  32         -5.08          1.39          1.57         -0.30          0.35          0.07          0.94          3.65          0.01          0.04          1.71         -0.29          0.00          0.00          0.00          0.00          0.00          0.00          0.05          0.32          0.00          0.32          0.00         -0.80          0.00          0.00          2.74          0.00          0.00          0.06
+protocols.simple_moves.ScoreMover: E(i)  33         -5.57          6.58          2.75         -0.08          0.00          0.05          0.52          2.70          0.00          0.00          1.04         -0.43          0.00          0.00          0.00          0.00          0.00          0.00         -0.12          1.34          0.66          0.68          0.00          0.00          0.00          0.00          4.31          0.00          0.00          0.55
+protocols.simple_moves.ScoreMover: E(i)  34         -4.15          0.82          3.10         -0.86          0.88          0.54          1.26          4.10          0.04          0.30         -0.25         -0.01          0.00          0.00          0.00          0.00          0.00          0.00          0.17          3.43          0.06          3.37          0.00         -0.29          0.00          0.00         -0.14          0.00          0.00          0.51
+protocols.simple_moves.ScoreMover: E(i)  35         -4.24          0.52          4.27         -0.29          0.06          0.14          1.87          4.71          0.00          0.00         -0.32         -0.23          0.00          0.00          0.00          0.00          0.00          0.00          0.23          2.65          0.01          2.64          0.00          0.01          0.00          0.00         -0.89          0.00          0.00          0.08
+protocols.simple_moves.ScoreMover: E(i)  36         -2.04          0.10          1.59         -0.17          0.04          0.25          0.50          2.20          0.00          0.00         -0.57         -0.21          0.00          0.00          0.00          0.00          0.00          0.00         -0.03          2.53          0.02          0.00          2.51          0.36          0.00          0.00         -0.30          0.00          0.00         -0.50
+protocols.simple_moves.ScoreMover: E(i)  37         -7.04          1.78          3.27         -0.59          0.68          0.14          2.80          5.95          0.00          0.00         -0.29          0.26          0.00          0.00          0.00          0.00          0.00          0.00         -0.10          1.47          0.46          1.01          0.00         -0.24          0.00          0.00          1.32          0.00          0.00         -0.26
+protocols.simple_moves.ScoreMover: E(i)  38         -2.88          0.76          3.49         -0.11          0.02          0.32          1.92          4.43          0.00          0.00         -2.04         -1.14          0.00          0.00          0.00         -0.77          0.00          0.00          0.01          3.21          0.03          0.00          3.17         -0.59          0.00          0.00         -1.62          0.00          0.00         -0.13
+protocols.simple_moves.ScoreMover: E(i)  39         -1.40          0.23          1.94         -0.03          0.02          0.03          0.80          2.35          0.03          0.25         -1.22         -0.25          0.00          0.00          0.00         -0.77          0.00          0.00          0.09          0.34          0.00          0.34          0.00          0.64          0.00          0.61         -0.54          0.00          0.00          1.44
+protocols.simple_moves.ScoreMover: E(i)  40         -2.48          0.34          2.45         -0.09          0.06          0.04          1.21          3.18          0.00          0.00         -0.64         -1.32          0.00          0.00          0.00         -0.03          0.00          0.00         -0.01          0.35          0.04          0.31          0.00         -0.96          0.00          2.34         -0.93          0.00          0.00          3.62
+protocols.simple_moves.ScoreMover: E(i)  41         -2.75          0.25          1.92         -0.24          0.39          0.09          1.07          2.82          0.02          0.07         -0.54         -1.39          0.00          0.00          0.00         -0.03          0.00          0.00          0.27          0.84          0.01          0.83          0.00          0.05          0.00          2.34         -0.93          0.00          0.00          2.25
+protocols.simple_moves.ScoreMover: E(i)  42         -4.38          1.13         -0.21         -0.37          0.85          0.09          0.51          2.24          0.00          0.00         -0.39         -0.08          0.00          0.00          0.00          0.00          0.00          0.00         -0.08          1.00          0.01          0.99          0.00         -1.07          0.00          0.00          2.74          0.00          0.00         -0.11
+protocols.simple_moves.ScoreMover: E(i)  43         -4.26          0.77          2.20         -0.02          0.00          0.00          2.32          4.67          0.00          0.00         -2.00         -0.37          0.00          0.00          0.00          0.00          0.00          0.00          0.09          0.00          0.00          0.00          0.00          0.31          0.00          0.00          2.26          0.00          0.00         -0.13
+protocols.simple_moves.ScoreMover: E(i)  44         -4.58          0.71          0.65         -0.62          1.48          0.12          0.40          3.14          0.00          0.04         -0.67          0.30          0.00          0.00          0.00          0.00          0.00          0.00          0.55          1.44          0.12          1.32          0.00         -1.24          0.00          0.00          1.80          0.00          0.00         -0.30
+protocols.simple_moves.ScoreMover: E(i)  45         -6.13          0.86          5.70         -0.41          0.01          0.27          2.87          7.42          0.00          0.00         -2.86         -0.53          0.00          0.00          0.00          0.00         -0.15          0.00          0.16          3.53          0.79          0.00          2.74         -0.68          0.00          0.00          0.84          0.00          0.00         -0.42
+protocols.simple_moves.ScoreMover: E(i)  46         -2.33          0.47          3.45         -0.09          0.00          0.27          0.86          3.85          0.01          0.18         -1.38         -0.44          0.00          0.00          0.00          0.00         -0.15          0.00         -0.25          2.97          0.04          0.00          2.94          0.17          0.00          0.00         -1.62          0.00          0.00          2.18
+protocols.simple_moves.ScoreMover: E(i)  47         -1.27          0.30          1.32         -0.03          0.05          0.00          0.30          1.66          0.00          0.00          0.15         -0.46          0.00          0.00          0.00          0.00          0.00          0.00          0.02          0.00          0.00          0.00          0.00          0.66          0.00          0.00          2.26          0.00          0.00          2.54
+protocols.simple_moves.ScoreMover: E(i)  48         -4.42          0.51          4.14         -0.20          0.06          0.30          2.65          5.49          0.00          0.01         -1.65         -0.56          0.00          0.00          0.00          0.00          0.00          0.00          0.37          4.25          0.07          0.00          4.18         -0.05          0.00          0.00         -1.64          0.00          0.00          0.31
+protocols.simple_moves.ScoreMover: E(i)  49         -6.30          0.96          1.13         -0.29          0.27          0.06          1.55          4.15          0.02          0.06         -1.23         -0.27          0.00          0.00          0.00          0.00          0.00          0.00          0.02          0.21          0.00          0.21          0.00         -0.77          0.00          0.00          2.74          0.00          0.00         -0.40
+protocols.simple_moves.ScoreMover: E(i)  50        -10.34          1.69          4.23         -0.55          0.07          0.24          4.18          8.01          0.02          0.19         -2.86         -0.24          0.00          0.00          0.00          0.00         -0.76          0.00          0.73          3.17          0.47          0.00          2.70         -0.59          0.02          0.04          1.74          0.00          0.00         -0.60
+protocols.simple_moves.ScoreMover: E(i)  51         -7.43          7.45          4.26         -0.07          0.12          0.07          3.04          5.28          0.06          0.34         -2.46         -0.08          0.00          0.00          0.00          0.00          0.00          0.00          0.57          2.01          0.71          1.30          0.00         -0.22          0.00          0.00          4.31          0.00          0.00         -0.30
+protocols.simple_moves.ScoreMover: E(i)  52         -3.42          0.59          3.15         -0.42          0.12          0.23          1.50          4.14          0.02          0.07         -0.91         -0.17          0.00          0.00          0.00          0.00          0.00          0.00          0.64          2.57          0.04          2.53          0.00         -0.03          0.00          0.00         -0.89          0.00          0.00          0.16
+protocols.simple_moves.ScoreMover: E(i)  53         -2.79          0.66          2.77         -0.03          0.01          0.03          0.84          3.18          0.00          0.00          0.06         -0.42          0.00          0.00          0.00          0.00          0.00          0.00          0.43          1.65          0.00          1.64          0.00         -0.63          0.00          0.61         -0.54          0.00          0.00          0.00
+protocols.simple_moves.ScoreMover: E(i)  54         -6.17          4.11          4.81         -0.04          0.00          0.02          2.60          5.56          0.02          0.14         -1.29         -0.16          0.00          0.00          0.00          0.00          0.00          0.00         -0.02          0.32          0.11          0.21          0.00          0.09          0.00          0.00          4.31          0.00          0.00          1.25
+protocols.simple_moves.ScoreMover: E(i)  55         -8.54          1.86          4.87         -0.86          0.09          0.35          4.13          7.94          0.00          0.04         -3.48         -0.30          0.00          0.00          0.00          0.00          0.00          0.00          0.21          2.89          0.18          0.00          2.71         -0.28          0.00          0.01          1.74          0.00          0.00          1.75
+protocols.simple_moves.ScoreMover: E(i)  56         -2.87          0.47          3.20          0.00          0.00          0.00          1.07          4.32          0.06          0.32         -0.80         -0.43          0.00          0.00          0.00          0.00          0.00          0.00         -0.16          0.00          0.00          0.00          0.00          0.35          0.00          0.00          1.44          0.00          0.00          1.31
+protocols.simple_moves.ScoreMover: E(i)  57         -3.06          0.50          3.89         -0.30          0.06          0.15          1.48          4.62          0.00          0.00         -0.74         -0.15          0.00          0.00          0.00          0.00          0.00          0.00         -0.07          2.52          0.07          2.45          0.00         -0.40          0.00          0.00         -0.89          0.00          0.00          1.18
+protocols.simple_moves.ScoreMover: E(i)  58         -4.44          0.35          3.90         -0.42          0.09          0.23          2.14          4.62          0.00          0.00         -0.89         -0.12          0.00          0.00          0.00          0.00         -0.76          0.00         -0.10          2.99          0.03          2.96          0.00         -0.16          0.00          0.00         -0.89          0.00          0.00          0.58
+protocols.simple_moves.ScoreMover: E(i)  59         -7.65          1.20          3.09         -0.62          0.06          0.35          1.89          5.43          0.02          0.14         -1.41         -0.12          0.00          0.00          0.00          0.00          0.00          0.00          0.08          2.88          0.13          0.00          2.75         -0.39          0.04          0.07          1.74          0.00          0.00          1.24
+protocols.simple_moves.ScoreMover: E(i)  60         -2.33          0.31          3.15          0.00          0.00          0.00          1.51          3.89          0.00          0.00         -0.81          0.17          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          1.44          0.00          0.00          0.88
+protocols.simple_moves.ScoreMover: E(i)  61         -1.37         14.43          1.45          0.00          0.00          0.00          0.12          0.22          0.00          0.00         -5.63          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00
+protocols.simple_moves.ScoreMover: E(i)  62         -1.30         15.33          1.25          0.00          0.00          0.00          0.02          0.07          0.00          0.00          4.83          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00          0.00
+protocols.simple_moves.ScoreMover: total_energy        fa_atr    -291.316
+protocols.simple_moves.ScoreMover: total_energy        fa_rep     120.979
+protocols.simple_moves.ScoreMover: total_energy        fa_sol     196.350
+protocols.simple_moves.ScoreMover: total_energyfa_intra_atr_x     -18.643
+protocols.simple_moves.ScoreMover: total_energyfa_intra_rep_x      14.374
+protocols.simple_moves.ScoreMover: total_energyfa_intra_sol_x      11.803
+protocols.simple_moves.ScoreMover: total_energy       lk_ball      99.977
+protocols.simple_moves.ScoreMover: total_energy   lk_ball_iso     274.887
+protocols.simple_moves.ScoreMover: total_energylk_ball_bridge       1.138
+protocols.simple_moves.ScoreMover: total_energylk_ball_bridge       7.221
+protocols.simple_moves.ScoreMover: total_energy       fa_elec     -61.303
+protocols.simple_moves.ScoreMover: total_energy fa_intra_elec     -18.507
+protocols.simple_moves.ScoreMover: total_energy     pro_close       0.000
+protocols.simple_moves.ScoreMover: total_energy   hbond_sr_bb     -16.656
+protocols.simple_moves.ScoreMover: total_energy   hbond_lr_bb     -12.576
+protocols.simple_moves.ScoreMover: total_energy   hbond_bb_sc      -3.590
+protocols.simple_moves.ScoreMover: total_energy      hbond_sc      -6.101
+protocols.simple_moves.ScoreMover: total_energy     dslf_fa13       0.000
+protocols.simple_moves.ScoreMover: total_energy         omega      10.334
+protocols.simple_moves.ScoreMover: total_energy        fa_dun     117.819
+protocols.simple_moves.ScoreMover: total_energy    fa_dun_dev      12.557
+protocols.simple_moves.ScoreMover: total_energy    fa_dun_rot      44.230
+protocols.simple_moves.ScoreMover: total_energy   fa_dun_semi      61.031
+protocols.simple_moves.ScoreMover: total_energy       p_aa_pp     -10.608
+protocols.simple_moves.ScoreMover: total_energy yhh_planarity       0.061
+protocols.simple_moves.ScoreMover: total_energy      hxl_tors       8.993
+protocols.simple_moves.ScoreMover: total_energy           ref      68.132
+protocols.simple_moves.ScoreMover: total_energylinear_chainbr       0.000
+protocols.simple_moves.ScoreMover: total_energyoverlap_chainb       0.000
+protocols.simple_moves.ScoreMover: total_energy   rama_prepro      40.714
+protocols.simple_moves.ScoreMover:  dslf_fa13    fa_atr    fa_dun fa_dun_dev fa_dun_rot fa_dun_semi     fa_elec fa_intra_atr_xover4 fa_intra_elec fa_intra_rep_xover4 fa_intra_sol_xover4              fa_rep              fa_sol hbond_bb_sc hbond_lr_bb    hbond_sc hbond_sr_bb    hxl_tors linear_chainbreak           lk_ball lk_ball_bridge lk_ball_bridge_uncpl lk_ball_iso       omega overlap_chainbreak            p_aa_pp pro_close rama_prepro         ref total_score yhh_planarity
+protocols.simple_moves.ScoreMover:      0.000  -291.316   117.819     12.557     44.230      61.031     -61.303             -18.643       -18.507              14.374              11.803             120.979             196.350      -3.590     -12.576      -6.101     -16.656       8.993             0.000            99.977          1.138                7.221     274.887      10.334              0.000            -10.608     0.000      40.714      68.132     651.301         0.061
+protocols.simple_moves.ScoreMover: 
+------------------------------------------------------------
+ Scores                       Weight   Raw Score Wghtd.Score
+------------------------------------------------------------
+ fa_atr                       1.000    -291.316    -291.316
+ fa_rep                       1.000     120.979     120.979
+ fa_sol                       1.000     196.350     196.350
+ fa_intra_atr_xover4          1.000     -18.643     -18.643
+ fa_intra_rep_xover4          1.000      14.374      14.374
+ fa_intra_sol_xover4          1.000      11.803      11.803
+ lk_ball                      1.000      99.977      99.977
+ lk_ball_iso                  1.000     274.887     274.887
+ lk_ball_bridge               1.000       1.138       1.138
+ lk_ball_bridge_uncpl         1.000       7.221       7.221
+ fa_elec                      1.000     -61.303     -61.303
+ fa_intra_elec                1.000     -18.507     -18.507
+ pro_close                    1.000       0.000       0.000
+ hbond_sr_bb                  1.000     -16.656     -16.656
+ hbond_lr_bb                  1.000     -12.576     -12.576
+ hbond_bb_sc                  1.000      -3.590      -3.590
+ hbond_sc                     1.000      -6.101      -6.101
+ dslf_fa13                    1.000       0.000       0.000
+ omega                        1.000      10.334      10.334
+ fa_dun                       1.000     117.819     117.819
+ fa_dun_dev                   1.000      12.557      12.557
+ fa_dun_rot                   1.000      44.230      44.230
+ fa_dun_semi                  1.000      61.031      61.031
+ p_aa_pp                      1.000     -10.608     -10.608
+ yhh_planarity                1.000       0.061       0.061
+ hxl_tors                     1.000       8.993       8.993
+ ref                          1.000      68.132      68.132
+ linear_chainbreak            1.000       0.000       0.000
+ overlap_chainbreak           1.000       0.000       0.000
+ rama_prepro                  1.000      40.714      40.714
+---------------------------------------------------
+ Total weighted score:                      651.301
+protocols.simple_moves.ScoreMover: 
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN MOVER RunSimpleMetrics - run_metrics1=======================
+protocols.analysis.simple_metrics.RunSimpleMetricsMover: Running: PerResidueSasaMetric - calculating res_sasa
+protocols.rosetta_scripts.ParsedProtocol: =======================BEGIN FILTER BSA=======================
+protocols.rosetta_scripts.ParsedProtocol: =======================END FILTER BSA=======================
+protocols.rosetta_scripts.ParsedProtocol: setting status to success
+protocols.simple_filters.BuriedSurfaceAreaFilter: RES	BURIED AREA (A^2)
+protocols.simple_filters.BuriedSurfaceAreaFilter: ASN1	44.4295
+protocols.simple_filters.BuriedSurfaceAreaFilter: LYS2	122.178
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS3	156
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLY4	101.77
+protocols.simple_filters.BuriedSurfaceAreaFilter: ALA5	87.7569
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS6	97.5976
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLY7	109.177
+protocols.simple_filters.BuriedSurfaceAreaFilter: ARG8	79.3427
+protocols.simple_filters.BuriedSurfaceAreaFilter: THR9	88.5156
+protocols.simple_filters.BuriedSurfaceAreaFilter: VAL10	166.889
+protocols.simple_filters.BuriedSurfaceAreaFilter: TYR11	50.0128
+protocols.simple_filters.BuriedSurfaceAreaFilter: HIS12	108.872
+protocols.simple_filters.BuriedSurfaceAreaFilter: ALA13	81.4235
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLU14	136.888
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLU15	189.39
+protocols.simple_filters.BuriedSurfaceAreaFilter: VAL16	147.664
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLN17	126.642
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS18	153.438
+protocols.simple_filters.BuriedSurfaceAreaFilter: ASP19	80.3397
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLY20	99.3199
+protocols.simple_filters.BuriedSurfaceAreaFilter: ARG21	167.017
+protocols.simple_filters.BuriedSurfaceAreaFilter: SER22	145.057
+protocols.simple_filters.BuriedSurfaceAreaFilter: PHE23	237
+protocols.simple_filters.BuriedSurfaceAreaFilter: HIS24	214.14
+protocols.simple_filters.BuriedSurfaceAreaFilter: ARG25	154.36
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS26	53.492
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS27	102.247
+protocols.simple_filters.BuriedSurfaceAreaFilter: PHE28	233.549
+protocols.simple_filters.BuriedSurfaceAreaFilter: LEU29	191.551
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS30	156
+protocols.simple_filters.BuriedSurfaceAreaFilter: MET31	216.683
+protocols.simple_filters.BuriedSurfaceAreaFilter: VAL32	116.769
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS33	104.627
+protocols.simple_filters.BuriedSurfaceAreaFilter: ARG34	89.0407
+protocols.simple_filters.BuriedSurfaceAreaFilter: LYS35	88.4653
+protocols.simple_filters.BuriedSurfaceAreaFilter: ASN36	47.4892
+protocols.simple_filters.BuriedSurfaceAreaFilter: LEU37	197.715
+protocols.simple_filters.BuriedSurfaceAreaFilter: ASP38	75.078
+protocols.simple_filters.BuriedSurfaceAreaFilter: SER39	77.6124
+protocols.simple_filters.BuriedSurfaceAreaFilter: THR40	78.9893
+protocols.simple_filters.BuriedSurfaceAreaFilter: THR41	105.35
+protocols.simple_filters.BuriedSurfaceAreaFilter: VAL42	140.589
+protocols.simple_filters.BuriedSurfaceAreaFilter: ALA43	135.835
+protocols.simple_filters.BuriedSurfaceAreaFilter: ILE44	157.413
+protocols.simple_filters.BuriedSurfaceAreaFilter: HIS45	186.058
+protocols.simple_filters.BuriedSurfaceAreaFilter: ASP46	66.3619
+protocols.simple_filters.BuriedSurfaceAreaFilter: ALA47	48.2722
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLU48	144.86
+protocols.simple_filters.BuriedSurfaceAreaFilter: VAL49	179.951
+protocols.simple_filters.BuriedSurfaceAreaFilter: TYR50	242.154
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS51	151.782
+protocols.simple_filters.BuriedSurfaceAreaFilter: LYS52	121.143
+protocols.simple_filters.BuriedSurfaceAreaFilter: SER53	88.0946
+protocols.simple_filters.BuriedSurfaceAreaFilter: CYS54	123.26
+protocols.simple_filters.BuriedSurfaceAreaFilter: TYR55	207.183
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLY56	130.961
+protocols.simple_filters.BuriedSurfaceAreaFilter: LYS57	60.1088
+protocols.simple_filters.BuriedSurfaceAreaFilter: LYS58	111.312
+protocols.simple_filters.BuriedSurfaceAreaFilter: TYR59	170.315
+protocols.simple_filters.BuriedSurfaceAreaFilter: GLY60	89.6477
+protocols.simple_filters.BuriedSurfaceAreaFilter:  ZN61	0.0
+protocols.simple_filters.BuriedSurfaceAreaFilter:  ZN62	0.0
+protocols.simple_filters.BuriedSurfaceAreaFilter: TOTAL BURIED AREA = 7635.18 square Angstroms.
+protocols.simple_filters.BuriedSurfaceAreaFilter: The BuriedSurfaceArea filter reports that this pose passes.
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============Begin report for BSA==================
+protocols.rosetta_scripts.ParsedProtocol.REPORT: RES	BURIED AREA (A^2)
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ASN1	44.4295
+protocols.rosetta_scripts.ParsedProtocol.REPORT: LYS2	122.178
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS3	156
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLY4	101.77
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ALA5	87.7569
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS6	97.5976
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLY7	109.177
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ARG8	79.3427
+protocols.rosetta_scripts.ParsedProtocol.REPORT: THR9	88.5156
+protocols.rosetta_scripts.ParsedProtocol.REPORT: VAL10	166.889
+protocols.rosetta_scripts.ParsedProtocol.REPORT: TYR11	50.0128
+protocols.rosetta_scripts.ParsedProtocol.REPORT: HIS12	108.872
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ALA13	81.4235
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLU14	136.888
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLU15	189.39
+protocols.rosetta_scripts.ParsedProtocol.REPORT: VAL16	147.664
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLN17	126.642
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS18	153.438
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ASP19	80.3397
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLY20	99.3199
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ARG21	167.017
+protocols.rosetta_scripts.ParsedProtocol.REPORT: SER22	145.057
+protocols.rosetta_scripts.ParsedProtocol.REPORT: PHE23	237
+protocols.rosetta_scripts.ParsedProtocol.REPORT: HIS24	214.14
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ARG25	154.36
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS26	53.492
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS27	102.247
+protocols.rosetta_scripts.ParsedProtocol.REPORT: PHE28	233.549
+protocols.rosetta_scripts.ParsedProtocol.REPORT: LEU29	191.551
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS30	156
+protocols.rosetta_scripts.ParsedProtocol.REPORT: MET31	216.683
+protocols.rosetta_scripts.ParsedProtocol.REPORT: VAL32	116.769
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS33	104.627
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ARG34	89.0407
+protocols.rosetta_scripts.ParsedProtocol.REPORT: LYS35	88.4653
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ASN36	47.4892
+protocols.rosetta_scripts.ParsedProtocol.REPORT: LEU37	197.715
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ASP38	75.078
+protocols.rosetta_scripts.ParsedProtocol.REPORT: SER39	77.6124
+protocols.rosetta_scripts.ParsedProtocol.REPORT: THR40	78.9893
+protocols.rosetta_scripts.ParsedProtocol.REPORT: THR41	105.35
+protocols.rosetta_scripts.ParsedProtocol.REPORT: VAL42	140.589
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ALA43	135.835
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ILE44	157.413
+protocols.rosetta_scripts.ParsedProtocol.REPORT: HIS45	186.058
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ASP46	66.3619
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ALA47	48.2722
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLU48	144.86
+protocols.rosetta_scripts.ParsedProtocol.REPORT: VAL49	179.951
+protocols.rosetta_scripts.ParsedProtocol.REPORT: TYR50	242.154
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS51	151.782
+protocols.rosetta_scripts.ParsedProtocol.REPORT: LYS52	121.143
+protocols.rosetta_scripts.ParsedProtocol.REPORT: SER53	88.0946
+protocols.rosetta_scripts.ParsedProtocol.REPORT: CYS54	123.26
+protocols.rosetta_scripts.ParsedProtocol.REPORT: TYR55	207.183
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLY56	130.961
+protocols.rosetta_scripts.ParsedProtocol.REPORT: LYS57	60.1088
+protocols.rosetta_scripts.ParsedProtocol.REPORT: LYS58	111.312
+protocols.rosetta_scripts.ParsedProtocol.REPORT: TYR59	170.315
+protocols.rosetta_scripts.ParsedProtocol.REPORT: GLY60	89.6477
+protocols.rosetta_scripts.ParsedProtocol.REPORT:  ZN61	0.0
+protocols.rosetta_scripts.ParsedProtocol.REPORT:  ZN62	0.0
+protocols.rosetta_scripts.ParsedProtocol.REPORT: TOTAL BURIED AREA = 7635.18 square Angstroms.
+protocols.rosetta_scripts.ParsedProtocol.REPORT: The BuriedSurfaceArea filter reports that this pose passes.
+protocols.rosetta_scripts.ParsedProtocol.REPORT: ============End report for BSA==================
+protocols.jd2.JobDistributor: 1a7i_A_0001 reported success in 11 seconds
+protocols.jd2.JobDistributor: no more batches to process... 
+protocols.jd2.JobDistributor: 1 jobs considered, 1 jobs attempted in 11 seconds
+basic.citation_manager.CitationManager: 
+The following Rosetta modules were used during this run of Rosetta, and should be cited:
+
+rosetta_scripts Application's citation(s):
+Fleishman SJ, Leaver-Fay A, Corn JE, Strauch E-M, Khare SD, Koga N, Ashworth J, Murphy P, Richter F, Lemmon G, Meiler J, and Baker D.  (2011).  RosettaScripts: A Scripting Language Interface to the Rosetta Macromolecular Modeling Suite.  PLoS ONE 6(6):e20161.  doi: 10.1371/journal.pone.0020161.
+
+
+The following UNPUBLISHED Rosetta modules were used during this run of Rosetta.  Their authors should be included in the author list when this work is published:
+
+RunSimpleMetrics Mover's author(s):
+Jared Adolf-Bryfogle, The Scripps Research Institute, La Jolla, CA <jadolfbr@gmail.com>
+
+
