@@ -18,8 +18,7 @@ while read pdb; do
 	output_dir=${JOB_DIR}/${pdb}
 	. ${THIRD_PARTY_TOOLS}/runParty3Calc.sh $pdb $input_file $output_dir
         end=`date +%s`
-        runtime=$((end-start))
-        echo "$pdb took $runtime"
+        echo "$pdb time: $((end-start))"
 done < ${JOB_DIR}/batch_input.txt
 
 start=`date +%s`
@@ -29,8 +28,7 @@ cd ${MAHOMES_II_DIR}/FeatureCalculations
 source ${MAHOMES_II_DIR}/venv/bin/activate
 python batch_save_features.py ${JOB_DIR}
 end=`date +%s`
-runtime=$((end-start))
-echo "Calculating features took $runtime"
+echo "Calculating features time: $((end-start))" 
 
 
 start=`date +%s`
@@ -40,5 +38,4 @@ source ${MAHOMES_II_DIR}/venv/bin/activate
 python MakePredictions.py $JOB_DIR
 cat $JOB_DIR/predictions.csv
 end=`date +%s`
-runtime=$((end-start))
-echo "predictions took $runtime"
+echo "predictions time: $((end-start))" 

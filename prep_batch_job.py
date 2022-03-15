@@ -12,6 +12,7 @@ with open("%s/batch_input.txt"%(job_dir), "w") as batch_input:
         pdb = file_name.split('/')[-1]
         pdb = pdb[:-4] # remove .pdb from file name
         #print(pdb)
-        os.system("mkdir -p %s/%s"%(job_dir, pdb))
-        batch_input.write("%s\n"%(pdb))
+        if len(pdb)>0:
+            os.system("mkdir -p %s/%s"%(job_dir, pdb))
+            batch_input.write("%s\n"%(pdb))
 
