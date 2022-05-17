@@ -5,6 +5,13 @@ PDB=$1
 INPUT_FILE=$2
 OUTPUT_DIR=$3
 echo $PDB
+## get paths for required third paerty software
+ROSETTA3=$4
+BLUUES_DIR=$5
+GHECOM_DIR=$6
+MAHOMES_II_DIR=$7
+
+
 
 ## make sure we are using the correct environment
 source ${MAHOMES_II_DIR}/venv/bin/activate
