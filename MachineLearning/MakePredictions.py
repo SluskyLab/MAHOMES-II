@@ -43,5 +43,5 @@ save_preds = save_preds[[
     ,'resName3', 'resNum3', 'resName4', 'resNum4' #,'metal3_resName', 'metal3_seqID', 'metal4_resName', 'metal4_seqID'
     ,'prediction', 'enzyme']].copy()
 
-save_preds.to_csv("%s/predictions.csv"%(job_dir))
+save_preds.to_csv("%s/predictions.csv"%(job_dir), index=False)
 
