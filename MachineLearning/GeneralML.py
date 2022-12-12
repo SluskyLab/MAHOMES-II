@@ -150,7 +150,7 @@ def get_classifier(classifier_name=None, classifier_index=None):
     SVC(kernel="sigmoid"),
     RandomForestClassifier(n_estimators=500, criterion='entropy', bootstrap=False),
     ExtraTreesClassifier(n_estimators=500, criterion='gini', bootstrap=False),
-    GradientBoostingClassifier(criterion = 'friedman_mse', min_samples_split = 3, n_estimators=1000, loss='deviance'),
+    GradientBoostingClassifier(criterion = 'friedman_mse', min_samples_split = 3, n_estimators=1000, loss='log_loss'),
     MLPClassifier(learning_rate_init = 0.01, activation='relu'),
     ]
 
