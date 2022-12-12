@@ -1,12 +1,10 @@
 import pandas as pd
-#import GeneralML as ML
-#import kfold_eval as kfold
 import Tsite_eval as Tsite
-#from sklearn.pipeline import make_pipeline, Pipeline
-#import ast
-#import joblib
-
 import MAHOMES_II as MHMII
+import warnings
+warnings.filterwarnings("ignore")
+
+
 MHMII_alg = "GradBoost"
 MHMII_scl = "QT_uniform"
 MHMII_FeatureSet=4
