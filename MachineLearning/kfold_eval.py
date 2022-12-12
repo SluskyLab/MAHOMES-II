@@ -10,7 +10,7 @@ def undersample(this_X, this_y, random_seed):
     y_Cat = this_y[this_y==True]
     y_nonCat = this_y[this_y==False]
     y_nonCat = y_nonCat#.sample(n=len(y_Cat)*3, axis=0, random_state=random_seed)
-    y_return = y_Cat.append(y_nonCat)
+    y_return = pd.concat([y_Cat, y_nonCat])
     X_return = this_X.loc[y_return.index]
     return(X_return, y_return)
 
