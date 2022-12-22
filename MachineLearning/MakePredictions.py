@@ -6,7 +6,9 @@ import pandas as pd
 
 job_dir = str(sys.argv[1])
 features = pd.read_csv("%s/features.csv"%(job_dir))
-preds = MHMII.make_predictions_with_saved_MAHOMES_II(features)
+features = features.loc[features['bad_site']==False].copy()
+if 0<len(features>:
+    preds = MHMII.make_predictions_with_saved_MAHOMES_II(features)
 
 ## use feature calculations to add any additional site metals to saved predictions 
 save_preds = pd.read_csv("%s/features.csv"%(job_dir))
