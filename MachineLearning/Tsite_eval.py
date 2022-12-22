@@ -14,6 +14,8 @@ from sklearn.metrics import confusion_matrix, matthews_corrcoef
 
 ## number of iterations to improve reproducability
 num_rand_seeds = 10
+
+'''
 def evaluate_model_with_Tsite(clf, data_df):
     X_train = data_df.loc[data_df['Set']=='data'].copy()
     Y_train = X_train['Enzyme'].astype(bool); 
@@ -67,7 +69,7 @@ def evaluate_model_with_Tsite(clf, data_df):
     total_imp_df=total_imp_df.sort_values('Importance', ascending=False).reset_index(drop=True)
 
     return(test_predictions, total_imp_df, raw_feat_imp_df)
-
+'''
 
 
 def evaluate_pipe_with_Tsite(pipe, X_train, Y_train, X_test, Y_test, return_feature_imp=False, print_work=True, save_models=False, save_dir="saved_models"):
@@ -136,7 +138,7 @@ def evaluate_pipe_with_Tsite(pipe, X_train, Y_train, X_test, Y_test, return_feat
 
 
 ## return result metrics for final predictions
-def check_result_metrics(prediction_df, print_work=True, include_convergence_score=True):
+def check_result_metrics(prediction_df, print_work=True, include_divergence_metrics=True):
     mcc = matthews_corrcoef(prediction_df['actual'], prediction_df['bool_pred'])
     TN, FP, FN, TP = confusion_matrix(prediction_df['actual'], prediction_df['bool_pred']).ravel()
     if print_work: print("TN %s, FP %s, FN %s, TP %s"%(TN, FP, FN, TP))
@@ -144,10 +146,15 @@ def check_result_metrics(prediction_df, print_work=True, include_convergence_sco
     TNR=(TN/(TN+FP))*100
     acc=((TP+TN)/(TP+TN+FP+FN))*100
     Prec=(TP/(TP+FP))*100
-    if include_convergence_score:
+    if include_divergence_metrics:
+        ## prev method
         convergence_score =(prediction_df['convergence'].sum()/len(prediction_df))*100
-        return(pd.DataFrame([[acc, mcc, TPR, Prec, TNR, convergence_score]],
-            columns=['Accuracy', 'MCC', 'Recall', 'Precision', 'TrueNegRate', 'convergence score']))
+        ## updated method for pub.
+        diverge_preds = prediction_df.loc[prediction_df['site_divergence']>0]
+        diverge_freq = (len(diverge_preds) / len(prediction_df))*100.0
+        diverge_score = diverge_preds['site_divergence'].mean()
+        return(pd.DataFrame([[acc, mcc, TPR, Prec, TNR, convergence_score, diverge_freq, diverge_score]],
+            columns=['Accuracy', 'MCC', 'Recall', 'Precision', 'TrueNegRate', 'convergence score', 'divergence freq.', 'divergence score']))
     return(pd.DataFrame([[acc, mcc, TPR, Prec, TNR]],
             columns=['Accuracy', 'MCC', 'Recall', 'Precision', 'TrueNegRate']))
     
@@ -167,7 +174,7 @@ def flatten_to_structure_predictions(Tsite_predictions, pipe_file = "../bin/MAHO
             if row['bool_pred']:confergence+=1
             else: confergence-=1
         confergence = abs(confergence/len(meta_site_preds))
-
+        site_diverge = 1 - confergence
         ## calculate this sites final predictions
         if len(meta_site_preds)%10!=0:
             if print_work: print("not 10 repeat meta-site:", meta_site_id)
@@ -183,8 +190,8 @@ def flatten_to_structure_predictions(Tsite_predictions, pipe_file = "../bin/MAHO
         if len(meta_site_preds['actual'].unique())>1:
             print("F!", meta_site_id, meta_site_preds['actual'].unique().tolist())
             #display(meta_site_preds)
-        this_pred_df = pd.DataFrame([[meta_site_id, total_pred, num_pred, pred, bool_pred, actual, confergence]]
-                                    , columns=['meta_site_id', 'total_pred', 'num_pred', 'pred', 'bool_pred', 'actual', 'convergence'])
+        this_pred_df = pd.DataFrame([[meta_site_id, total_pred, num_pred, pred, bool_pred, actual, confergence, site_diverge]]
+                                    , columns=['meta_site_id', 'total_pred', 'num_pred', 'pred', 'bool_pred', 'actual', 'convergence', 'site_divergence'])
         struc_preds.append(this_pred_df)
     struc_preds = pd.concat(struc_preds, ignore_index=True)
     return(struc_preds)

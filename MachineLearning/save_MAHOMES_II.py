@@ -29,7 +29,7 @@ AFset_preds['min residue pLDDT within 15Å of site']=AFset_preds['min_pLDDT_15']
 print(AFset_preds.shape)
 
 all_metrics = []
-metrics = Tsite.check_result_metrics(AFset_preds, print_work=True, include_convergence_score=False)
+metrics = Tsite.check_result_metrics(AFset_preds, print_work=True, include_divergence_metrics=False)
 sizes = AFset_preds.groupby(['Enzyme']).size()
 metrics['enzyme sites']= sizes[1]; metrics['not-enzyme sites']= sizes[0]; metrics['total sites']= AFset_preds.shape[0]
 metrics['Set']="All made AF predictions"
