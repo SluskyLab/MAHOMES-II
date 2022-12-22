@@ -6,8 +6,8 @@
 import pandas as pd
 import numpy as np
 #import os
-pd.set_option('max_colwidth', 100)
-pd.set_option('max_rows', 10000)
+pd.set_option('display.max_colwidth', 100)
+pd.set_option('display.max_rows', 10000)
 
 #####################################################################
 ######             CREATE WORKABLE PDB DATAFRAME               ######

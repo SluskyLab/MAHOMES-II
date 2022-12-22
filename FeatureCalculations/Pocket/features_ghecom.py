@@ -34,10 +34,10 @@ def get_ghecom_pocket_info(filename):
     for x in keep_clusters:
         try:
             good_clusters.append(str(int(x)))
-            cluster_cens.at[cluster_cens.PocketID == x, "ClusterNum"] = str(int(x))
+            cluster_cens.loc[cluster_cens["PocketID"].astype(str) == str(x), "ClusterNum"] = str(int(x))
         except ValueError:
             good_clusters.append(str(ord(x)-55)) #convert the letters to numbers
-            cluster_cens.at[cluster_cens.PocketID == x, "ClusterNum"] = str(ord(x)-55)
+            cluster_cens.loc[cluster_cens["PocketID"].astype(str) == str(x), "ClusterNum"] = str(ord(x)-55)
 
     small_clusters = subprocess.check_output( ["grep", "REMARK  CLUSTER_PROPERTY  ", filename ])
     small_clusters = small_clusters.decode("utf-8").strip().split("\n")
@@ -45,11 +45,11 @@ def get_ghecom_pocket_info(filename):
     for x in small_clusters:
         #print(x)
         if x[2] in cluster_cens.ClusterNum.values:
-            cluster_cens.at[cluster_cens.ClusterNum == x[2], "Ngrid"] = float(x[4])
-            cluster_cens.at[cluster_cens.ClusterNum == x[2], "Volume"] = float(x[6])
-            cluster_cens.at[cluster_cens.ClusterNum == x[2], "Rinac(A) av"] = float(x[9])
-            cluster_cens.at[cluster_cens.ClusterNum == x[2], "Rinac(A) mi"] = float(x[11])
-            cluster_cens.at[cluster_cens.ClusterNum == x[2], "invRvolume(AA)"] = float(x[13])
+            cluster_cens.loc[cluster_cens["ClusterNum"] == x[2], "Ngrid"] = float(x[4])
+            cluster_cens.loc[cluster_cens["ClusterNum"] == x[2], "Volume"] = float(x[6])
+            cluster_cens.loc[cluster_cens["ClusterNum"] == x[2], "Rinac(A) av"] = float(x[9])
+            cluster_cens.loc[cluster_cens["ClusterNum"] == x[2], "Rinac(A) mi"] = float(x[11])
+            cluster_cens.loc[cluster_cens["ClusterNum"] == x[2], "invRvolume(AA)"] = float(x[13])
     return(cluster_cens)
 
 
