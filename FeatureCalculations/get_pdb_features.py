@@ -19,7 +19,7 @@ metal_size = {
          'CU': 1, 'C2O' :3, 'CUA' : 2, 'CU1': 1, "3CO": 1,
          }
 ## flag to change for debugging server instead of commenting out try/excepts
-DEBUG=True
+DEBUG=False
 
 def get_site_info(struc_id, site):
     # different ways to count a site for ion codes, number of metals, and number of any atom (i.e. FES has 1, 2, and 4)
