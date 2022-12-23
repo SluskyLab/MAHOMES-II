@@ -16,9 +16,9 @@ with open("%s/batch_input.txt"%(job_dir), "w") as batch_input:
             os.system("mkdir -p %s/%s"%(job_dir, pdb))
             batch_input.write("%s\n"%(pdb))
 
-    for file_name in glob.glob("%s/*.mmcif"%(job_dir)):
+    for file_name in glob.glob("%s/*.cif"%(job_dir)):
         pdb = file_name.split('/')[-1]
-        pdb = pdb[:-6] # remove .mmcif from file name
+        pdb = pdb[:-4] # remove .mmcif from file name
         if len(pdb)>0:
             os.system("mkdir -p %s/%s"%(job_dir, pdb))
             batch_input.write("%s\n"%(pdb))
