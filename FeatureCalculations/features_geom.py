@@ -20,10 +20,9 @@ findgeo_geoms = ["lin", "trv", "tri", "tev", "spv",
 def collate_findgeo(these_metals, pdb_id, directory):
     #print(these_metals)
     geom_out_file = "%s/%s.findgeo"%(directory, pdb_id)
+    this_geom = np.zeros(44)
+    num_geoms = 0
     if os.path.isfile(geom_out_file) == True: 
-        this_geom = np.zeros(44) 
-        
-        num_geoms = 0
         with open(geom_out_file, "r") as inData:
             #findgeo input is atomid, geom, irr/reg/distorted, RMSD, 4 N, O, S, other ligand ?
             for line in inData:
@@ -50,7 +49,7 @@ def collate_findgeo(these_metals, pdb_id, directory):
                     
     else:
         print("No geom data", pdb_id)
-        this_geom = np.full(44,0)
+
     these_labels = ["geom_" + x for x in findgeo_geoms]
     these_labels.extend(["geom_Reg", "geom_Distort", "geom_LigN", "geom_LigO", "geom_LigS", "geom_LigOther", "geom_AtomRMSD"])
     this_geom = pd.DataFrame.from_records(this_geom.reshape(-1, len(this_geom)).T, index = these_labels)
