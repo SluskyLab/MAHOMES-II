@@ -152,8 +152,8 @@ def get_features_for_pdb(job_dir, struc_id, old_features=False):
         struc_features=struc_features[0]
     elif 0==len(struc_features):
         return(pd.DataFrame())
-    struc_features.reset_index(drop=False, inplace=True)
-    return(struc_features)
+    return_features = struc_features.reset_index(drop=False).copy()
+    return(return_features)
 
 
 

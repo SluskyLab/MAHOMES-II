@@ -132,7 +132,7 @@ def calc_pocket_info_plus(pocket, site_center, center_of_mass, pocket_info):
     ## rotate pocket so protein center is oriding and z axis points to pocket center
     pocket_center = np.mean(pocket[["X", "Y", "Z"]], axis = 0)
     pocket_w_site=pd.DataFrame([site_center], columns=['X', 'Y', 'Z'])
-    pocket_w_site=pocket_w_site.append(pocket, ignore_index=True)
+    pocket_w_site=pd.concat([pocket_w_site, pocket], ignore_index=True)
     new_pocket_w_site = rotate_pocket_grid(pocket_w_site, center_of_mass, pocket_center)
     new_site_center = new_pocket_w_site.iloc[0].copy()
     new_pocket = new_pocket_w_site.iloc[1:].copy()
