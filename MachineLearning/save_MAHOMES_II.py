@@ -4,7 +4,7 @@ import MAHOMES_II as MHMII
 import warnings
 warnings.filterwarnings("ignore")
 
-
+## optimized GradBoost hyper parameters used for MAHOMES II
 MHMII_alg = "GradBoost"
 MHMII_scl = "QT_uniform"
 MHMII_FeatureSet=4
@@ -37,7 +37,7 @@ all_metrics.append(metrics)
 
 for col in ['min residue pLDDT within 5Å of site', 'min residue pLDDT within 10Å of site', 'min residue pLDDT within 15Å of site']:
     AFset_preds = AFset_preds.loc[AFset_preds[col]>=90]
-    metrics = Tsite.check_result_metrics(AFset_preds, print_work=True, include_convergence_score=False)
+    metrics = Tsite.check_result_metrics(AFset_preds, print_work=True, include_divergence_metrics=False)
     sizes = AFset_preds.groupby(['Enzyme']).size()
     metrics['enzyme sites']= sizes[1]; metrics['not-enzyme sites']= sizes[0]; metrics['total sites']= AFset_preds.shape[0];
     metrics['Set']="%s > 90"%col
