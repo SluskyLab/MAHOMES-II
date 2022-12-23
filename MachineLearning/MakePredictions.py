@@ -18,7 +18,7 @@ not_predicted.rename(columns={"struc_id":"jobid", "note":"prediction"}, inplace=
 
 save_preds = save_preds.loc[save_preds['bad_site']==False].copy()
 save_preds['metal1_seqID']=save_preds['metal1_seqID'].astype(int)
-save_preds.set_index(['struc_id', 'metal1_resName', 'metal1_seqID'], inplace=True)
+save_preds.set_index(['struc_id', 'metal1_resName', 'metal1_seqID', 'metal1_serial'], inplace=True)
 save_preds[['junk', 'site#']]=save_preds['SITE_ID'].str.rsplit("_", n=1, expand=True)
 
 for col in ['metal2_resName', 'metal2_seqID', 'metal3_resName', 'metal3_seqID', 'metal4_resName', 'metal4_seqID']:

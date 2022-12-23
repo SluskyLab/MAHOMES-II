@@ -105,7 +105,7 @@ def run_and_save_MAHOMES_II(this_classifier_name, this_scaler_name, this_feature
 
 num_rand_seeds=10
 def make_predictions_with_saved_MAHOMES_II(X_new, save_dir="saved_models"):
-    X_new.set_index(['struc_id', 'metal1_resName', 'metal1_seqID'],inplace=True)
+    X_new.set_index(['struc_id', 'metal1_resName', 'metal1_seqID', 'metal1_serial'],inplace=True)
     new_site_preds = {'prediction': pd.Series("-1", index=X_new.index)}
 
     X_dont_predict =X_new.loc[X_new['bad_site']==True].copy()
