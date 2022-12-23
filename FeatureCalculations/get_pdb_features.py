@@ -18,7 +18,8 @@ metal_size = {
          'OFE': 2, 'FE2': 1,'FEO': 3, 'FE' : 1,'FES': 4,
          'CU': 1, 'C2O' :3, 'CUA' : 2, 'CU1': 1, "3CO": 1,
          }
-
+## flag to change for debugging server instead of commenting out try/excepts
+DEBUG=True
 
 def get_site_info(struc_id, site):
     # different ways to count a site for ion codes, number of metals, and number of any atom (i.e. FES has 1, 2, and 4)
@@ -122,21 +123,23 @@ def get_features_for_pdb(job_dir, struc_id, old_features=False):
         print("No bluues output", struc_id)
 
     for site in sites:
-        try:
-            if True==site.bad:
-                site_features =get_site_info(struc_id, site).T
-            elif False==bluues_output:
-                site.bad = True
-                site.note = "Missing bluues"
-                site_features =get_site_info(struc_id, site).T
-            else:
-                site_features = get_features_for_site(struc_id, struc_dir, site, this_protein, res_nums, old_features)
-        except:
-            site.bad = True
-            site.note = "Failed feature calculations"
-            print("\tFailed %s site with %s %s"%(struc_id, site.metal_atoms[0].resName, str(site.metal_atoms[0].seqID)))
-            site_features = get_site_info(struc_id, site).T
-                
+        if True==DEBUG:
+            site_features = get_features_for_site(struc_id, struc_dir, site, this_protein, res_nums, old_features)
+        else:
+            try:
+                if True==site.bad:
+                    site_features =get_site_info(struc_id, site).T
+                elif False==bluues_output:
+                    site.bad = True
+                    site.note = "Missing bluues"
+                    site_features =get_site_info(struc_id, site).T
+                else:
+                    site_features = get_features_for_site(struc_id, struc_dir, site, this_protein, res_nums, old_features)
+            except:
+                site.note = "Failed feature calculations"
+                print("\tFailed %s site with %s %s"%(struc_id, site.metal_atoms[0].resName, str(site.metal_atoms[0].seqID)))
+                site_features = get_site_info(struc_id, site).T
+
         site_features.set_index("SITE_ID", drop=True, inplace=True)
         struc_features.append(site_features)
 
