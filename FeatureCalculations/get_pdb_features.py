@@ -114,7 +114,10 @@ def get_features_for_pdb(job_dir, struc_id, old_features=False):
         print("No PDB file output from Rosetta", struc_id)
         return_df = pd.DataFrame([[struc_id, "unknown", True, "Invalid structure file input. Please make sure file is valid input for Rosetta 3.13."]], columns=["struc_id", "SITE_ID", "bad_site", "note"])
         return(return_df)
-
+    if 1>len(sites):
+        print("No sites found", struc_id)
+        return_df = pd.DataFrame([[struc_id, "NA", True, "No metal sites were found in this file."]], columns=["struc_id", "SITE_ID", "bad_site", "note"])
+        return(return_df)
     bluues_output=True
     try:
         Reformat.bluues(struc_dir, struc_id)
