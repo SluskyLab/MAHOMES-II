@@ -113,7 +113,7 @@ class SITE:
         close_atoms_df = atom_df.loc[atom_df['dist']<=close_cutoff]
         if 1>len(close_atoms_df):
             self.bad=True
-            self.note="no residues within %s Å of site center"%str(close_cutoff)
+            self.note="no residues within %s angstroms of site center"%str(close_cutoff)
 
     def get_residue_distances(self, protein):
         distances = []
