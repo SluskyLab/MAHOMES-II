@@ -5,7 +5,7 @@
 
 
 ## System requirements
-Feature calculations also require using Rosetta, FindGeo, and bluues which we run using Python 2.7 with CentOS 7 (or red hat now?).
+Feature calculations also require using Rosetta, FindGeo, and bluues which we run using Python 3.8 and 2.7 on RHEL 8 operating system.
 
 ## set-up guide
 ### Successfuly install the following third party software tools:
@@ -19,14 +19,8 @@ Feature calculations also require using Rosetta, FindGeo, and bluues which we ru
 note: FindGeo and bluues binaries may require additional dependencies depending on the system being used.
 
 ### change something
-1. add the following to your bashrc or bash_profile
-export ROSETTA3="/path/to/rosetta/main/source"
-export BLUUES_DIR="/path/to/bluues"
-export GHECOM_DIR="/path/to/ghecom/"
-export MAHOMES_II_DIR="/path/to/MAHOMES_II"
-
+1. Update ThirdPartyCalculations/testRun.sh to point to the correct location on your machine.
 2. change FINDGEO_DIR in ThirdPartyCalculations/findgeo.py to point to the correct location on your machine.
-
 3. run ThirdPartyCalculations/testRun.sh check if ThirdPartyCalculations/check_setup/output/ is correct.
 
  
