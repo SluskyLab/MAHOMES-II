@@ -1,4 +1,3 @@
-change
 # MAHOMES II
 Metal Activity Heuristic of Metalloprotein and Enzymatic Sites (MAHOMES) II - Predicts if a protein bound metal ion is enzymatic or non-enzymatic
 
