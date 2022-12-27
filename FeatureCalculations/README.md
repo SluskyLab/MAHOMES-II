@@ -4,7 +4,7 @@ Copyright (C) 2021 University of Kansas
 
 
 ## Overview
-
+This directory contains code to calculate MAHOMES II input features for protein bound metal ion sites.
 
 ## System requirements
 Feature calculations also require using Rosetta, FindGeo, and bluues which we run using Python 3.8 and 2.7 on RHEL 8 operating system.
@@ -20,9 +20,9 @@ Feature calculations also require using Rosetta, FindGeo, and bluues which we ru
 
 note: FindGeo and bluues binaries may require additional dependencies depending on the system being used.
 
-### change something
+### test output from other programs 
 1. Update ThirdPartyCalculations/testRun.sh to point to the correct location on your machine.
 2. change FINDGEO_DIR in ThirdPartyCalculations/findgeo.py to point to the correct location on your machine.
-3. run ThirdPartyCalculations/testRun.sh check if ThirdPartyCalculations/check_setup/output/ is correct.
-
+3. run ThirdPartyCalculations/testRun.sh 
+4. Compare files generated in ThirdPartyCalculations/check_setup/output to files in ThirdPartyCalculations/check_setup/example
  

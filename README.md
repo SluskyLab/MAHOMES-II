@@ -20,18 +20,20 @@ $ pip install -r requirements.txt # add packages to environment
 ```
 Repeat above proccess for venv2 using python2.7 and requirements2.txt
 
-## Follow FeatureCalculations/README.md to set up third-party feature calculations
-
-## Training and saving MAHOMES II ML models
+### Additional required setup
+1. Follow FeatureCalculations/README.md to setup third-party feature calculations
+2. Update directory paths in setup_ML.sh and driver.sh
+3. Train and save MAHOMES II ML models
 ```
-$ ./prep_ML.sh
+$ ./setup_ML.sh
 ```
-
-## Making enzyme and non-enzyme predictions for a PDB with MAHOMES II
+## Instructions for use
+To make enzyme and non-enzyme predictions using MAHOMES II
 1. Make a new directory and place one or more PDB files in it
 2. Run the following command, replacing $JOB_DIR with the directory from step 1
 ```
 . /path-to-repo/MAHOMES-II-server/driver.sh $JOB_DIR
 ```
 The directory should now have predictions.csv as well as all the calculated features.
+
 
