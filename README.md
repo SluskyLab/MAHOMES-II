@@ -7,7 +7,7 @@ Metal Activity Heuristic of Metalloprotein and Enzymatic Sites (MAHOMES) II - Pr
 The ability to distinguish enzyme from non-enzyme sites remains an unsolved, challenging task. We've developed MAHOMES, a machine learning based tool which classifies metals bound to proteins as enzymatic or non-enzymatic. We intend to build on the previous work to make MAHOMES II, a more stable and robust version with a web server.
 
 ## System requirements
-Feature calculations also require using Rosetta, FindGeo, and bluues which we run using Python 2.7 with CentOS 7 (or red hat now?).
+Feature calculations also require using Rosetta, FindGeo, and bluues which we run using Python 3.8 and 2.7 on RHEL 8 operating system.
 
 ## Installation guide
 ### set up virtual environment:
