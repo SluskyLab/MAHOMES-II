@@ -1,3 +1,5 @@
+Copyright (C) 2021 University of Kansas
+
 # MAHOMES II physiochemical feature calculations
 
 

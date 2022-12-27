@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Copyright (c) 2010-2011
+# This code was distributed with findgeo has been modified for use with MAHOMES II
 # findgeo is distributed under the terms of the GNU General Public License
 #
 """
@@ -17,6 +18,11 @@
     You should have received a copy of the GNU General Public License
     along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
 """
+
+# @file  
+# @brief 
+# @author for modifications: Meghan Franklin, Ryan Feehan <RFeehan93@gmail.com>
+
 
 import sys
 import os
