@@ -37,6 +37,20 @@ To make enzyme and non-enzyme predictions using MAHOMES II
 The directory should now have predictions.csv as well as all the calculated features.
 
 
+## Citing this work
+
+If you use the code or data in this package, please cite:
+
+```bibtex
+@Article{MAHOMES II,
+  author  = {Ryan Feehan, Matthew Copeland, Joanna S. G. Slusky},
+  journal = {bioRxiv},
+  title   = {MAHOMES II: A webserver for predicting if a metal binding site is enzymatic},
+  year    = {},
+  doi     = {}
+}
+```
+
 ## References and acknowledgements
 
 MAHOMES II communicates with and/or references the following separate libraries
