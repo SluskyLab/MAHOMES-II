@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Meghan Franklin, Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/General/PDBparser.py
+# @brief  Parses .pdb file
+# @author Meghan W. Franklin
 
 
 import numpy as np
@@ -27,7 +27,7 @@ import subprocess
 import scipy.spatial
 import math
 import itertools
-import PDBmanip as pdbm
+#import PDBmanip as pdbm
 
 aa = ["ALA", "ARG", "ASN", "ASP", "CYS", "GLN", "GLU", "GLY", "HIS", "ILE", "LEU", "LYS", "MET", "PHE", "PRO", "SER", "THR", "TRP", "TYR", "VAL", "MSE", "SEC"]
 oneletAA = ["A", "R", "N", "D", "C", "Q", "E", "G", "H", "I", "L", "K", "M", "F", "P", "S", "T", "W", "Y", "V", "M", "C"]

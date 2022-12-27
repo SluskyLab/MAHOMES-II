@@ -13,9 +13,9 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
+#
+# @file   FeatureCalculations/batch_save_features.py 
+# @brief  Runs and saves features for structure files in input directory.
 # @author Ryan Feehan <RFeehan93@gmail.com>
 
 import os

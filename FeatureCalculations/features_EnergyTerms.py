@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/features_EnergyTerms.py
+# @brief  Turns reformated output per residue Rosetta scores into MAHOMES II features
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
 
 import numpy as np

@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/Pocket/features_ghecom.py 
+# @brief  Finds site's pocket grid from GHECOM output and adds some MAHOMES II pocket void features
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
 import pandas as pd
 import numpy as np

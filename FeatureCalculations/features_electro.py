@@ -13,13 +13,12 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+# @file   FeatureCalculations/features_electro.py
+# @brief  Turns reformated output from BLUUES into MAHOMES II features
+# @author Meghan W. Franklin
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
-
-
-## this will all go in features_electro.py file
 import os
 import sys
 import numpy as np

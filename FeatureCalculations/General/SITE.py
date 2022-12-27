@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/General/SITE.py
+# @brief  For handling metal ion sites for MAHOMES II
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
 import numpy as np
 import pandas as pd

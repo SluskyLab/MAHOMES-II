@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/features_pocket.py
+# @brief  Combines all MAHOMES II pocket features (lining and void)
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
 import pandas as pd
 import numpy as np

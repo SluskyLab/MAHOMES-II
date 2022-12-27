@@ -13,10 +13,11 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/Pocket/grid_tools.py
+# @brief  For working with pocket grid and generating MAHOMES II pocket void features
+# @author Meghan W. Franklin
+# @author Ryan Feehan
 
 import os
 import sys

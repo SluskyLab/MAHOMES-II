@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/get_pdb_features.py
+# @brief  Combines features from different categories for any sites in input PDB
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
 import sys
 import pandas as pd

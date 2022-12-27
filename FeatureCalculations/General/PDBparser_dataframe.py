@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/General/PDBparser_dataframe.py
+# @brief  Parses .pdb file using pandas
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
 #########################################################################################################################
 #################################################    who (P)DB          #################################################

@@ -13,18 +13,18 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/Pocket/pocket_lining.py
+# @brief  Uses pocket grid to generate MAHOMES II pocket lining features
+# @author Meghan W. Franklin
 
 import grid_tools
 import numpy as np
 import scipy
 import warnings
 from sklearn import cluster
-#import matplotlib.pyplot as plt
-#from mpl_toolkits.mplot3d import Axes3D
+
+
 
 eisenburg_hp = {"A":  0.620, "R": -2.530, "N": -0.780, "D": -0.900, "C":  0.290, "Q": -0.850, "E": -0.740, "G":  0.480, "H": -0.400,  "I":  1.380, 
 "L":  1.060, "K": -1.500, "M":  0.640, "F":  1.190, "P":  0.120, "S": -0.180, "T": -0.050, "W":  0.810, "Y":  0.260, "V":  1.080, "X": 0}

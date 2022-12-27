@@ -13,10 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
+#
 # @file  
-# @brief 
-# @author Meghan Franklin, Ryan Feehan <RFeehan93@gmail.com>
+# @brief  manipulates .pdb files, I don't think this is used in current repo
+# @author Meghan W. Franklin
 
 
 import numpy as np

@@ -13,10 +13,11 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
-# @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# @file   FeatureCalculations/features_geom.py
+# @brief  Turns output from findgeo into MAHOMES II features
+# @author Meghan W. Franklin
+# @author Ryan Feehan (RFeehan93@gmail.com)
 
 import os
 import numpy as np

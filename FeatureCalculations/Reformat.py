@@ -13,9 +13,10 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
+#
+# @file   FeatureCalculations/Reformat.py 
+# @brief  Makes adjusted output for BLUUES and Rosetta tht is easier to debug and use
+# @author Meghan W. Franklin
 # @author Ryan Feehan <RFeehan93@gmail.com>
 
 import pandas as pd
