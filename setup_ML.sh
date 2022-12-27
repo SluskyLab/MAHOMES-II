@@ -16,7 +16,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-# @file   prep_ML.sh
+# @file   setup_ML.sh
 # @brief  Saves ML models used for MAHOMES II in order to make predictions on new machines
 # @author Ryan Feehan <RFeehan93@gmail.com>
 
