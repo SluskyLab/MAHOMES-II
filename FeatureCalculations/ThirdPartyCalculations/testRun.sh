@@ -15,9 +15,9 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
+#
+# @file   FeatureCalculations/ThirdPartyCalculations/testRun.sh
+# @brief  Makes third-party outputs for test pdb to compare with successful example outputs 
 # @author Ryan Feehan <RFeehan93@gmail.com>
 
 ROSETTA3="/path/to/rosetta/main/source"

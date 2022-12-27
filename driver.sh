@@ -15,10 +15,18 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
+#
+# @file   driver.sh
+# @brief  Calculates features and produces predictions using MAHOMES II for structure files in input directory
 # @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# usage: bash driver.sh /path/to/input/dir
+# 
+# .cif/.pdb files in input directory will get third party calculation outputs.
+# Metal ion sites in structure files will be identifed. Feature values will 
+# be calculated for these sites, which will be used to make enzyme or non-enzyme
+# predictions (input/dir/predictions.csv) with MAHOMES II
+
 
 JOB_DIR=$1
 

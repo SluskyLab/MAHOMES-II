@@ -14,10 +14,20 @@
 #
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-# @file  
-# @brief 
+#
+# @file   FeatureCalculations/ThirdPartyCalculations/runParty3Calc.sh 
+# @brief  Generates Rosetta, BLUUES, GHECOM, and FindGeo outputs required for MAHOMES II feature calculations
 # @author Ryan Feehan <RFeehan93@gmail.com>
+#
+# usage: bash runParty3Calc.sh input_name path/to/input/file path/for/output path/to/rosetta path/to/bluues path/to/ghecom path/to/findgeo path/to/MAHOMES-II
+# 
+# Takes a .cif/.pdb file with a protein structure. Scores structure with Rosetta and outputs
+# uniform .pdb file that is used for the rest of the feature calculations.
+# Makes a .pqr file and uses it for bluues to make theoretical tirtration curve
+# output. Outputs pocket grid(s) using ghecom. Then outputs coordination for 
+# and metals in the file using findgeo.
+
+
 
 echo "Working in runThirdPartyTools.sh!"
 
