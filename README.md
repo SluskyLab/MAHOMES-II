@@ -43,8 +43,8 @@ If you use the code or data in this package, please cite:
 
 ```bibtex
 @Article{MAHOMES-II,
-  author  = {Ryan Feehan, Matthew Copeland, Joanna S. G. Slusky},
-  journal = {bioRxiv},
+  author  = {Ryan Feehan, Matthew Copeland, Meghan W. Franklin, Joanna S. G. Slusky},
+  journal = {},
   title   = {MAHOMES II: A webserver for predicting if a metal binding site is enzymatic},
   year    = {},
   doi     = {}
