@@ -15,7 +15,7 @@ numpy==1.23.3
 packaging==21.3
 pandas==1.4.4
 pdb2pqr==3.5.2
-Pillow==9.2.0
+Pillow==10.2.0
 pluggy==0.13.1
 propka==3.4.0
 py==1.10.0
