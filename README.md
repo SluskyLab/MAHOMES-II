@@ -3,6 +3,9 @@ Copyright © 2021 University of Kansas
 # MAHOMES II
 Metal Activity Heuristic of Metalloprotein and Enzymatic Sites (MAHOMES) II - Predicts if a protein bound metal ion is enzymatic or non-enzymatic
 
+NOTE: The MAHOMES II project on GitHUb is archived.  Python dependencies will need to be updated for Python versions above 3.8.
+
+
 ## Overview
 The ability to distinguish enzyme from non-enzyme sites remains an unsolved, challenging task. We've developed MAHOMES, a machine learning based tool which classifies metals bound to proteins as enzymatic or non-enzymatic. We intend to build on the previous work to make MAHOMES II, a more stable and robust version with a web server.
 
